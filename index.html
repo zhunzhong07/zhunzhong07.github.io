@@ -1,7 +1,7 @@
 <html>
 
 <head>
-   
+
     <base target="_blank">
     <link rel='shortcut icon' href='./logo1.jpg' />
     <meta charset="UTF-8">
@@ -25,18 +25,18 @@
 
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
      rel="stylesheet" type="text/css" />
-	
-	
-    <script>
+
+
+	 <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
   hm.src = "https://hm.baidu.com/hm.js?10dec223ee1df5e4fa433c7ffe3c909c";
-  var s = document.getElementsByTagName("script")[0]; 
+  var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-	
+
 </head>
 
 <body>
@@ -53,6 +53,7 @@ var _hmt = _hmt || [];
         <div style="padding-right: .5em; vertical-align: top; height: 250px;">
           <span style="font-size: 20pt; line-height: 130%;"> Zhun Zhong 钟准 </span><br /><br />
           <span>PhD Student at XMU, Xiamen University</span><br /><br />
+	  <img border="0" src="./email.png"/><br /><br />
           <a href="https://scholar.google.com/citations?user=nZizkQ0AAAAJ&hl=en">Google Scholar</a>/
 	<a href="https://github.com/zhunzhong07">GitHub</a>
         </div>
@@ -61,8 +62,20 @@ var _hmt = _hmt || [];
 
     <!--<div style="clear: both; background-color: #fff; margin-top: 1.5em; padding: .2em; padding-left: .3em;">-->
     <div style="clear: both;">
-      
-      
+
+    <div class="section">
+    <h2>About me</h2>
+      <div class="paper">
+        Hello! <br /><br />
+        I am a fourth-year Ph.D. student in Cognitive Science Department,
+		      at <strong>Xiamen University</strong> under the supervision of <a href="http://information.xmu.edu.cn/portal/node/106">Prof. Shaozi Li </a>. I received the M.S. Degree in Computer Science and Technology in 2015 from <strong>China University Of Petroleum</strong>, Qingdao, China. I received the B.S. degree from the Information Engineering Department, from <strong>East China University of Technology</strong> in 2012. <br /><br />
+ I am currently a joint Ph.D. student at University of Technology Sydney under the co-supervision of <a href="https://sites.google.com/site/ianyyang2016/">Prof. Yi Yang</a> and  <a href="http://www.liangzheng.com.cn">Dr. Liang Zheng.</a> <br /><br />
+ My research interests include <strong>person re-identification</strong> and <strong>domain adaptation</strong>.
+      </div>
+    </div>
+
+
+
     <div class="section">
       <h2>News</h2>
       <div class="paper">
@@ -74,6 +87,334 @@ var _hmt = _hmt || [];
         </ul>
       </div>
     </div>
+
+
+
+    <div class="section">
+    <h2 id="reports">Arxiv Papers</h2>
+
+       <div class="paper" id="Erasing">
+      <img class="paper" title="Random Erasing Data Augmentation" src="./erasing.jpg" />
+      <div>
+        <a class="paper" href="https://arxiv.org/abs/1708.04896" target="_blank">Random Erasing Data Augmentation</a><br />
+        <strong>Zhun Zhong</strong>, Liang Zheng, Guoliang Kang, Shaozi Li, Yi Yang<br />
+        Arxiv, 2017<br />
+        <a shape="rect" href="javascript:toggleabs('Erasing')" class="toggleabs">abstract</a> /
+        <a shape="rect" href="javascript:togglebib('Erasing')" class="togglebib">bibtex</a>  /
+        <a shape="rect" href="https://arxiv.org/abs/1708.04896" target="_blank" >PDF</a> /
+	<a shape="rect" href="https://pytorch.org/docs/master/torchvision/transforms.html#torchvision.transforms.RandomErasing" target="_blank" >Torchvision</a> /
+        <a shape="rect" href="https://github.com/zhunzhong07/Random-Erasing" target="_blank" >CIFAR</a> /
+	<a shape="rect" href="https://github.com/rwightman/pytorch-image-models" target="_blank" >ImageNet</a> /
+	<a shape="rect" href="https://github.com/zhunzhong07/CamStyle" target="_blank" >Re-ID</a>
+        <pre xml:space="preserve">
+@article{zhong2017random,
+  title={Random Erasing Data Augmentation},
+  author={Zhong, Zhun and Zheng, Liang and Kang, Guoliang and Li, Shaozi and Yang, Yi},
+  journal={arXiv preprint arXiv:1708.04896},
+  year={2017}
+}
+        </pre>
+        <span class="blurb">
+In this paper, we introduce Random Erasing, a new data augmentation method for training the convolutional neural network (CNN). In training, Random Erasing randomly selects a rectangle region in an image and erases its pixels with random values. In this process, training images with various levels of occlusion are generated, which reduces the risk of over-fitting and makes the model robust to occlusion. Random Erasing is parameter learning free, easy to implement, and can be integrated with most of the CNN-based recognition models. Albeit simple, Random Erasing is complementary to commonly used data augmentation techniques such as random cropping and flipping, and yields consistent improvement over strong baselines in image classification, object detection and person re-identification.
+        </span>
+      </div>
+      <div class="spanner"></div>
+    </div>
+ </div>
+
+</div>
+
+    <div class="section">
+    <h2 id="reports">Publications</h2>
+
+
+<!--------------------------------------------------------------------------->
+       <div class="paper" id="cvpr19">
+      <div>
+        <a class="paper" href="https://arxiv.org/abs/1904.01990" target="_blank">Invariance Matters: Exemplar Memory for Domain Adaptive Person Re-identiﬁcation</a><br />
+        <strong>Zhun Zhong</strong>, Liang Zheng, Zhiming Luo, Shaozi Li, Yi Yang<br />
+        IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2019<br />
+        <a shape="rect" href="javascript:togglebib('cvpr19')" class="togglebib">bibtex</a>  /
+	<a shape="rect" href="https://arxiv.org/abs/1904.01990" class="_blank">pdf</a>  /
+	<a shape="rect" href="https://github.com/zhunzhong07/ECN" target="_blank" >Code</a>
+        <pre xml:space="preserve">
+@inproceedings{zhong2019invariance,
+  title={Invariance Matters: Exemplar Memory for Domain Adaptive Person Re-identiﬁcation},
+  author={Zhong, Zhun and Zheng, Liang and Luo, Zhiming and Li, Shaozi and Yang, Yi},
+  booktitle={Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2019}
+}
+        </pre>
+      </div>
+      <div class="spanner"></div>
+    </div>
+ </div>
+<!--------------------------------------------------------------------------->
+
+
+
+<!--------------------------------------------------------------------------->
+       <div class="paper" id="camstyle-TIP">
+      <div>
+        <a class="paper" href="https://ieeexplore.ieee.org/document/8485427" target="_blank">CamStyle: A Novel Data Augmentation Method for Person Re-identification</a><br />
+        <strong>Zhun Zhong</strong>, Liang Zheng, Zhedong Zheng, Shaozi Li, Yi Yang<br />
+        IEEE Transactions on Image Processing (TIP), 2019<br />
+        <a shape="rect" href="javascript:togglebib('camstyle-TIP')" class="togglebib">bibtex</a>  /
+	<a shape="rect" href="https://ieeexplore.ieee.org/document/8485427" class="_blank">pdf</a>  /
+	<a shape="rect" href="https://github.com/zhunzhong07/CamStyle" target="_blank" >Code</a>
+        <pre xml:space="preserve">
+@article{zhong2019camstyle,
+  title={CamStyle: A Novel Data Augmentation Method for Person Re-identification},
+  author={Zhong, Zhun and Zheng, Liang and Zheng, Zhedong and Li, Shaozi and Yang, Yi},
+  journal={IEEE Transactions on Image Processing},
+  volume={28},
+  number={3},
+  pages={1176--1190},
+  publisher={IEEE},
+  year={2019}
+}
+        </pre>
+      </div>
+      <div class="spanner"></div>
+    </div>
+ </div>
+<!--------------------------------------------------------------------------->
+
+
+       <div class="paper" id="hhl">
+      <img class="paper" title="Generalizing A Person Retrieval Model Hetero- and Homogeneously" src="./hhl_framework.png" />
+      <div>
+        <a class="paper" href="http://openaccess.thecvf.com/content_ECCV_2018/html/Zhun_Zhong_Generalizing_A_Person_ECCV_2018_paper.html" target="_blank">Generalizing A Person Retrieval Model Hetero- and Homogeneously</a><br />
+        <strong>Zhun Zhong</strong>, Liang Zheng, Shaozi Li, Yi Yang<br />
+        European Conference on Computer Vision (ECCV), 2018<br />
+        <a shape="rect" href="javascript:toggleabs('hhl')" class="toggleabs">abstract</a> /
+        <a shape="rect" href="javascript:togglebib('hhl')" class="togglebib">bibtex</a>  /
+        <a shape="rect" href="http://openaccess.thecvf.com/content_ECCV_2018/html/Zhun_Zhong_Generalizing_A_Person_ECCV_2018_paper.html" target="_blank" >PDF</a>/
+	<a shape="rect" href="https://github.com/zhunzhong07/HHL" target="_blank" >Code</a>
+        <pre xml:space="preserve">
+@inproceedings{zhong2018generalizing,
+  title={Generalizing A Person Retrieval Model Hetero-and Homogeneously},
+  author={Zhong, Zhun and Zheng, Liang and Li, Shaozi and Yang, Yi},
+  booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
+  pages={172--188},
+  year={2018}
+}
+        </pre>
+        <span class="blurb">
+Person re-identiﬁcation (re-ID) poses unique challenges for unsupervised domain adaptation (UDA) in that classes in the source and target sets (domains) are entirely diﬀerent and that image variations are largely caused by cameras. Given a labeled source training set and an unlabeled target training set, we aim to improve the generalization ability of re-ID models on the target testing set. To this end, we introduce a Hetero-Homogeneous Learning (HHL) method. Our method enforces two properties simultaneously: 1) camera invariance, learned via positive pairs formed by unlabeled target images and their camera style transferred counterparts; 2) domain connectedness, by regarding source / target images as negative matching pairs to the target / source images. The ﬁrst property is implemented by homogeneous learning because training pairs are collected from the same domain. The second property is achieved by heterogeneous learning because we sample training pairs from both the source and target domains. On Market-1501, DukeMTMC-reID and CUHK03, we show that the two properties contribute indispensably and that very competitive re-ID UDA accuracy is achieved.
+      </div>
+      <div class="spanner"></div>
+    </div>
+ </div>
+
+
+       <div class="paper" id="camstyle">
+      <img class="paper" title="Camera Style Adaptation for Person Re-identification" src="./camstyle.jpg" />
+      <div>
+        <a class="paper" href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Zhong_Camera_Style_Adaptation_CVPR_2018_paper.pdf" target="_blank">Camera Style Adaptation for Person Re-identification</a><br />
+        <strong>Zhun Zhong</strong>, Liang Zheng, Zhedong Zheng, Shaozi Li, Yi Yang<br />
+        IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2018<br />
+        <a shape="rect" href="javascript:toggleabs('camstyle')" class="toggleabs">abstract</a> /
+        <a shape="rect" href="javascript:togglebib('camstyle')" class="togglebib">bibtex</a>  /
+        <a shape="rect" href="http://openaccess.thecvf.com/content_cvpr_2018/papers/Zhong_Camera_Style_Adaptation_CVPR_2018_paper.pdf" target="_blank" >PDF</a>/
+	<a shape="rect" href="https://github.com/zhunzhong07/CamStyle" target="_blank" >Code</a>
+        <pre xml:space="preserve">
+@inproceedings{zhong2018camera,
+  title={Camera style adaptation for person re-identification},
+  author={Zhong, Zhun and Zheng, Liang and Zheng, Zhedong and Li, Shaozi and Yang, Yi},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+  pages={5157--5166},
+  year={2018}
+}
+        </pre>
+        <span class="blurb">
+Being a cross-camera retrieval task, person re-identification suffers from image style variations caused by different cameras. The art implicitly addresses this problem by learning a camera-invariant descriptor subspace. In this paper, we explicitly consider this challenge by introducing camera style (CamStyle) adaptation. CamStyle can serve as a data augmentation approach that smooths the camera style disparities. Specifically, with CycleGAN, labeled training images can be style-transferred to each camera, and, along with the original training samples, form the augmented training set. This method, while increasing data diversity against over-fitting, also incurs a considerable level of noise. In the effort to alleviate the impact of noise, the label smooth regularization (LSR) is adopted. The vanilla version of our method (without LSR) performs reasonably well on few-camera systems in which over-fitting often occurs. With LSR, we demonstrate consistent improvement in all systems regardless of the extent of over-fitting. We also report competitive accuracy compared with the state of the art.        </span>
+      </div>
+      <div class="spanner"></div>
+    </div>
+ </div>
+
+
+
+       <div class="paper" id="Reranking-reid">
+      <img class="paper" title="Re-ranking Person Re-identification with k-reciprocal Encoding" src="./person-re-ranking.jpg" />
+      <div>
+        <a class="paper" href="http://openaccess.thecvf.com/content_cvpr_2017/papers/Zhong_Re-Ranking_Person_Re-Identification_CVPR_2017_paper.pdf" target="_blank">Re-ranking Person Re-identification with k-reciprocal Encoding</a><br />
+        <strong>Zhun Zhong</strong>, Liang Zheng, Donglin Cao,Shaozi Li<br />
+        IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017<br />
+        <a shape="rect" href="javascript:toggleabs('Reranking-reid')" class="toggleabs">abstract</a> /
+        <a shape="rect" href="javascript:togglebib('Reranking-reid')" class="togglebib">bibtex</a>  /
+        <a shape="rect" href="http://openaccess.thecvf.com/content_cvpr_2017/papers/Zhong_Re-Ranking_Person_Re-Identification_CVPR_2017_paper.pdf" target="_blank" >PDF</a>/
+        <a shape="rect" href="https://github.com/zhunzhong07/person-re-ranking" target="_blank" >Code and CUHK03 new training/testing protocol</a>
+        <pre xml:space="preserve">
+@inproceedings{zhong2017re,
+  title={Re-ranking person re-identification with k-reciprocal encoding},
+  author={Zhong, Zhun and Zheng, Liang and Cao, Donglin and Li, Shaozi},
+  booktitle={Computer Vision and Pattern Recognition (CVPR), 2017 IEEE Conference on},
+  pages={3652--3661},
+  year={2017},
+  organization={IEEE}
+}
+        </pre>
+        <span class="blurb">
+When considering person re-identification (re-ID) as a retrieval process, re-ranking is a critical step to improve its accuracy. Yet in the re-ID community, limited effort has been devoted to re-ranking, especially those fully automatic, unsupervised solutions. In this paper, we propose a k-reciprocal encoding method to re-rank the re-ID results. Our hypothesis is that if a gallery image is similar to the probe in the k-reciprocal nearest neighbors, it is more likely to be a true match. Specifically, given an image, a k-reciprocal feature is calculated by encoding its k-reciprocal nearest neighbors into a single vector, which is used for re-ranking under the Jaccard distance. The final distance is computed as the combination of the original distance and the Jaccard distance. Our re-ranking method does not require any human interaction or any labeled data, so it is applicable to large-scale datasets. Experiments on the large-scale Market-1501, CUHK03, MARS, and PRW datasets confirm the effectiveness of our method.
+
+        </span>
+      </div>
+      <div class="spanner"></div>
+    </div>
+ </div>
+
+
+
+
+       <div class="paper" id="Re-proposals">
+      <img class="paper" title="Class-Specific Object Proposals Re-ranking for Object Detection in Automatic Driving" src="./re-proposals.jpg" />
+      <div>
+        <a class="paper" href="http://www.sciencedirect.com/science/article/pii/S0925231217303922" target="_blank">Class-Specific Object Proposals Re-ranking for Object Detection in Automatic Driving</a><br />
+        <strong>Zhun Zhong</strong>, Mingyi Lei, Donglin Cao, Jianping Fan, Shaozi Li<br />
+        Neurocomputing, 2017<br />
+        <a shape="rect" href="javascript:toggleabs('Re-proposals')" class="toggleabs">abstract</a> /
+        <a shape="rect" href="javascript:togglebib('Re-proposals')" class="togglebib">bibtex</a>  /
+        <a shape="rect" href="http://www.sciencedirect.com/science/article/pii/S0925231217303922" target="_blank" >PDF</a>
+        <pre xml:space="preserve">
+@article{zhong2017class,
+  title={Class-specific object proposals re-ranking for object detection in automatic driving},
+  author={Zhong, Zhun and Lei, Mingyi and Cao, Donglin and Fan, Jianping and Li, Shaozi},
+  journal={Neurocomputing},
+  volume={242},
+  pages={187--194},
+  year={2017},
+  publisher={Elsevier}
+}
+        </pre>
+        <span class="blurb">
+        Object detection often suffers from a plenty of bootless proposals, selecting high quality proposals
+remains a great challenge. In this paper, we propose a semantic, class-specific approach to re-rank
+object proposals, which can consistently improve the recall performance even with less proposals.
+We first extract features for each proposal including semantic segmentation, stereo information,
+contextual information, CNN-based objectness and low-level cue, and then score them using classspecific
+weights learnt by Structured SVM. The advantages of the proposed model are two-fold: 1)
+it can be easily merged to existing generators with few computational costs, and 2) it can achieve
+high recall rate uner strict critical even using less proposals. Experimental evaluation on the KITTI
+benchmark demonstrates that our approach significantly improves existing popular generators on
+recall performance. Moreover, in the experiment conducted for object detection, even with 1,500
+proposals, our approach can still have higher average precision (AP) than baselines with 5,000
+proposals.
+
+        </span>
+      </div>
+      <div class="spanner"></div>
+    </div>
+ </div>
+
+
+
+
+        <div class="paper" id="GCP">
+      <img class="paper" title="Detecting Ground Control Points via Convolutional Neural Network for Stereo Matching" src="./mtap.jpg" />
+      <div>
+        <a class="paper" href="http://rd.springer.com/article/10.1007/s11042-016-3932-y" target="_blank">Detecting Ground Control Points via Convolutional Neural Network for Stereo Matching</a><br />
+        <strong>Zhun Zhong</strong>, Songzhi Su, Donglin Cao, Shaozi Li, Zhihan Lv<br />
+        Multimedia Tools and Applications (<strong>MTA</strong>), 2016<br />
+        <a shape="rect" href="javascript:toggleabs('GCP')" class="toggleabs">abstract</a> /
+        <a shape="rect" href="javascript:togglebib('GCP')" class="togglebib">bibtex</a>  /
+        <a shape="rect" href="http://rd.springer.com/article/10.1007/s11042-016-3932-y" target="_blank" >PDF</a>
+        <pre xml:space="preserve">
+@article{zhong2017detecting,
+  title={Detecting ground control points via convolutional neural network for stereo matching},
+  author={Zhong, Zhun and Su, Songzhi and Cao, Donglin and Li, Shaozi and Lv, Zhihan},
+  journal={Multimedia Tools and Applications},
+  volume={76},
+  number={18},
+  pages={18473--18488},
+  year={2017},
+  publisher={Springer}
+}
+        </pre>
+        <span class="blurb">
+        In this paper, we present a novel approach to detect ground control points (GCPs) for stereo matching problem. First of all, we train a convolutional neural network (CNN) on a large stereo set, and compute the matching confidence of each pixel by using the trained CNN model. Secondly, we present a ground control points selection scheme according to the maximum matching confidence of each pixel. Finally, the selected GCPs are used to refine the matching costs, then we apply the new matching costs to perform optimization with semi-global matching algorithm for improving the final disparity maps. We evaluate our approach on the KITTI 2012 stereo benchmark dataset. Our experiments show that the proposed approach significantly improves the accuracy of disparity maps.
+        </span>
+      </div>
+      <div class="spanner"></div>
+    </div>
+ </div>
+
+
+
+          <div class="paper" id="icip">
+      <img class="paper" title="Unsupervised domain adaption dictionary learning for visual recognition" src="./icip2015.jpg" />
+      <div>
+        <a class="paper" href="https://arxiv.org/pdf/1506.01125.pdf" target="_blank">Unsupervised domain adaption dictionary learning for visual recognition</a><br />
+        <strong>Zhun Zhong</strong>, Zongming Li, Runlin Li, Xiaoxia Sun<br />
+        <strong>ICIP</strong>, 2015<br />
+        <a shape="rect" href="javascript:toggleabs('icip')" class="toggleabs">abstract</a> /
+        <a shape="rect" href="javascript:togglebib('icip')" class="togglebib">bibtex</a>  /
+        <a shape="rect" href="https://arxiv.org/pdf/1506.01125.pdf" target="_blank" >axXiv</a>
+        <pre xml:space="preserve">
+@article{zhong2015unsupervised,
+  title={Unsupervised domain adaption dictionary learning for visual recognition},
+  author={Zhong, Zhun and Li, Zongmin and Li, Runlin and Sun, Xiaoxia},
+  journal={arXiv preprint arXiv:1506.01125},
+  year={2015}
+}
+        </pre>
+        <span class="blurb">
+Over the last years, dictionary learning method has been extensively applied to deal with various computer vision recognition applications, and produced state-of-the-art results. However, when the data instances of a target domain have a different distribution than that of a source domain, the dictionary learning method may fail to perform well. In this paper, we address the cross-domain visual recognition problem and propose a simple but effective unsupervised domain adaption approach, where labeled data are only from source domain. In order to bring the original data in source and target domain into the same distribution, the proposed method forcing nearest coupled data between source and target domain to have identical sparse representations while jointly learning dictionaries for each domain, where the learned dictionaries can reconstruct original data in source and target domain respectively. So that sparse representations of original data can be used to perform visual recognition tasks. We demonstrate the effectiveness of our approach on standard datasets. Our method performs on par or better than competitive state-of-the-art methods.
+        </span>
+      </div>
+      <div class="spanner"></div>
+    </div>
+ </div>
+
+
+    </div>
+
+
+    <div class="section">
+      <h2>Activities</h2>
+      <div class="paper">
+        <ul>
+	    <li> I have given a talk at ECCV 2018 Tutorial: "Representation Learning in Pedestrian Re-identification".
+            <li>Program Committee / Reviewer: IEEE TPAMI, IEEE TIP, TCSVT, CVPR 2019, ICCV 2019</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="section">
+      <h2>My Friends</h2>
+      <div class="paper">
+        <ul>
+            <li><strong><a href="https://sites.google.com/view/zhimingluo">Zhiming Luo</a> Xiamen University</strong> </li>
+            <li><strong><a href="https://lynnhongliu.github.io/hliu/">Hong Liu</a> Xiamen University</strong> </li>
+
+        </ul>
+      </div>
+    </div>
+
+
+
+
+    <div style="clear:both;">
+     <p align="right"><font size="2">
+              <a href="http://www-bcf.usc.edu/~iacopoma/"  target="_blank">I like this website!</a>
+              </font>
+            </p>
+
+    <br />
+    </div>
+
+    <script xml:space="preserve" language="JavaScript">
+    hideallbibs();
+    hideallabs();
+    </script>
+
+
+    <a href="http://www.easycounter.com/"><img alt="HTML Counter"
+        src="http://www.easycounter.com/counter.php?xiaozhun07"
+        border="0"></a> <i><font size="2" face="Arial">unique visitors
+        since Dec 2016</font></i
 
 </body>
 </html>

@@ -41,29 +41,23 @@
     </div>
 </div>
 
-    <center><img src="./img/ncl_abs.png" border="0" width="90%"></center>
+    <center><img src="./img/ncl_abs.png" border="0" width="95%">
         Illustration of novel class discovery (NCD) and the proposed neighborhood contrastive learning (NCL).
+    </center>
 
 <div class="section abstract">
     <h2>Abstract</h2>
     <br>
     <p>
-      Natural images are projections of 3D objects on a 2D image plane. While state-of-the-art 2D generative models like GANs show unprecedented quality in modeling the natural image manifold, it is unclear whether they implicitly capture the underlying 3D object structures. And if so, how could we exploit such knowledge to recover the 3D shapes of objects in the images? To answer these questions, in this work, we present the first attempt to directly mine 3D geometric clues from an off-the-shelf 2D GAN that is trained on RGB images only. Through our investigation, we found that such a pre-trained GAN indeed contains rich 3D knowledge and thus can be used to recover 3D shape from a single 2D image in an unsupervised manner. The core of our framework is an iterative strategy that explores and exploits diverse viewpoint and lighting variations in the GAN image manifold. The framework does not require 2D keypoint or 3D annotations, or strong assumptions on object shapes (e.g. shapes are symmetric), yet it successfully recovers 3D shapes with high precision for human faces, cats, cars, and buildings. The recovered 3D shapes immediately allow high-quality image editing like relighting and object rotation. We quantitatively demonstrate the effectiveness of our approach compared to previous methods in both 3D shape reconstruction and face rotation. Our code and models will be released at https://github.com/XingangPan/GAN2Shape.</p>
+      In this paper, we address Novel Class Discovery (NCD), the task of unveiling new classes in a set of unlabeled samples given a labeled dataset with known classes. We exploit the peculiarities of NCD to build a new framework, named Neighborhood Contrastive Learning (NCL), to learn discriminative representations that are important to clustering performance. Our contribution is twofold. First, we ﬁnd that a feature extractor trained on the labeled set generates representations in which a generic query sample and its neighbors are likely to share the same class. We exploit this observation to retrieve and aggregate pseudo-positive pairs with contrastive learning, thus encouraging the model to learn more discriminative representations. Second, we notice that most of the instances are easily discriminated by the network, contributing less to the contrastive loss. To overcome this issue, we propose to generate hard negatives by mixing labeled and unlabeled samples in the feature space. We experimentally demonstrate that these two ingredients signiﬁcantly contribute to clustering performance and lead our model to outperform state-of-the-art methods by a large margin (e.g., clustering accuracy +13% on CIFAR-100 and +8% on ImageNet).</p>
 
 </div>
 
-<div class="section demo">
-	<h2>Demo</h2>
-  <br>
-  <center><img src="./GAN2Shape_demo.gif" border="0" width="85%"><br>
-    Recovered 3D shape and rotation&relighting effects using GAN2Shape.
-  </center>
-</div>
 
 <div class="section method">
 	<h2>Method Overview</h2>
   <br>
-  <center><img src="./GAN2Shape_method.png" border="0" width="70%"><br>
+  <center><img src="./img/ncl_framework.png" border="0" width="80%"><br>
     (a) Given a single image, Step 1 initializes the depth with ellipsoid, and optimizes the albedo network A. (b) Step 2 uses the depth and albedo to render `pseudo samples' with various random viewpoint and lighting conditions, and conducts GAN-inversion to them to obtain the `projected samples'. (c) Step 3 refines the depth map by optimizing (V, L, D, A) networks to reconstruct the projected samples. The refined depth and models are used as the new initialization to repeat the above steps.
   </center>
 </div>
@@ -71,7 +65,7 @@
 <div class="section results">
 	<h2>More Results</h2>
   <br>
-  <center><img src="./GAN2Shape_appendix.png" border="0" width="80%"><br>
+  <center><img src="./img/ncl_results.png" border="0" width="80%"><br>
   </center>
 </div>
 
@@ -116,11 +110,11 @@
 <div class="section citation">
     <h2>Citation</h2>
     <div class="section bibtex">
-      <pre>@article{pan2020gan2shape,
-    title   = {Do 2D GANs Know 3D Shape? Unsupervised 3D Shape Reconstruction from 2D Image GANs},
-    author  = {Pan, Xingang and Dai, Bo and Liu, Ziwei and Loy, Chen Change and Luo, Ping},
-    journal = {arXiv preprint arXiv:2011.00844},
-    year    = {2020}
+      <pre>@article{zhongncl2021,
+      title={Neighborhood Contrastive Learning},
+      author={Zhong, Zhun and Fini, Enrico and Roy, Subhankar and Luo, Zhiming and Ricci, Elisa and Sebe, Nicu},
+      booktitle={Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+      year={2021}
 }</pre>
       </div>
       </div>

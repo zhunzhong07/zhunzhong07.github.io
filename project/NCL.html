@@ -1,14 +1,13 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Do 2D GANs Know 3D Shape? Unsupervised 3D Shape Reconstruction from 2D Image GANs</title>
+<title>Neighborhood Contrastive Learning for Novel Class Discovery</title>
 
 <!-- Meta tags for search engines to crawl -->
 <meta name="robots" content="index,follow">
-<meta name="description" content="Natural images are projections of 3D objects on a 2D image plane. While state-of-the-art 2D generative models like GANs show unprecedented quality in modeling the natural image manifold, it is unclear whether they implicitly capture the underlying 3D object structures. And if so, how could we exploit such knowledge to recover the 3D shapes of objects in the images? To answer these questions, in this work, we present the first attempt to directly mine 3D geometric clues from an off-the-shelf 2D GAN that is trained on RGB images only. Through our investigation, we found that such a pre-trained GAN indeed contains rich 3D knowledge and thus can be used to recover 3D shape from a single 2D image in an unsupervised manner. The core of our framework is an iterative strategy that explores and exploits diverse viewpoint and lighting variations in the GAN image manifold. The framework does not require 2D keypoint or 3D annotations, or strong assumptions on object shapes (e.g. shapes are symmetric), yet it successfully recovers 3D shapes with high precision for human faces, cats, cars, and buildings. The recovered 3D shapes immediately allow high-quality image editing like relighting and object rotation. We quantitatively demonstrate the effectiveness of our approach compared to previous methods in both 3D shape reconstruction and face rotation. Our code and models will be released at https://github.com/XingangPan/GAN2Shape".
+<meta name="description" content="In this paper, we address Novel Class Discovery (NCD), the task of unveiling new classes in a set of unlabeled samples given a labeled dataset with known classes. We exploit the peculiarities of NCD to build a new framework, named Neighborhood Contrastive Learning (NCL), to learn discriminative representations that are important to clustering performance. Our contribution is twofold. First, we ﬁnd that a feature extractor trained on the labeled set generates representations in which a generic query sample and its neighbors are likely to share the same class. We exploit this observation to retrieve and aggregate pseudo-positive pairs with contrastive learning, thus encouraging the model to learn more discriminative representations. Second, we notice that most of the instances are easily discriminated by the network, contributing less to the contrastive loss. To overcome this issue, we propose to generate hard negatives by mixing labeled and unlabeled samples in the feature space. We experimentally demonstrate that these two ingredients signiﬁcantly contribute to clustering performance and lead our model to outperform state-of-the-art methods by a large margin (e.g., clustering accuracy +13% on CIFAR-100 and +8% on ImageNet).".
 >
-<meta name="keywords" content="GAN; 3D reconstruction;">
-<link rel="author" href="https://xingangpan.github.io/">
+<meta name="keywords" content="Novel Class Discovery; Neighborhood Contrastive Learning;">
+<link rel="author" href="zhunzhong.site">
 
 <!-- Fonts and stuff -->
 <link href="./css" rel="stylesheet" type="text/css">
@@ -21,12 +20,12 @@
 <body>
   <div id="content">
     <div id="content-inner">
-      
+
     <div class="section head">
-    <h1>Do 2D GANs Know 3D Shape? Unsupervised 3D Shape Reconstruction from 2D Image GANs</h1>
+    <h1>Neighborhood Contrastive Learning for Novel Class Discovery</h1>
 
     <div class="authors">
-      <a href="https://xingangpan.github.io/">Xingang Pan</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://zhunzhong.site/">Zhun Zhong</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="http://daibo.info/">Bo Dai</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="https://liuziwei7.github.io/">Ziwei Liu</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a href="http://personal.ie.cuhk.edu.hk/~ccloy/">Chen Change Loy</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -40,7 +39,7 @@
       3. <a href="https://www.cs.hku.hk/">The University of Hong Kong</a>
     </div>
 </div>
-      
+
     <center><img src="./GAN2Shape.png" border="0" width="90%"></center>
 
 <div class="section abstract">
@@ -50,7 +49,7 @@
       Natural images are projections of 3D objects on a 2D image plane. While state-of-the-art 2D generative models like GANs show unprecedented quality in modeling the natural image manifold, it is unclear whether they implicitly capture the underlying 3D object structures. And if so, how could we exploit such knowledge to recover the 3D shapes of objects in the images? To answer these questions, in this work, we present the first attempt to directly mine 3D geometric clues from an off-the-shelf 2D GAN that is trained on RGB images only. Through our investigation, we found that such a pre-trained GAN indeed contains rich 3D knowledge and thus can be used to recover 3D shape from a single 2D image in an unsupervised manner. The core of our framework is an iterative strategy that explores and exploits diverse viewpoint and lighting variations in the GAN image manifold. The framework does not require 2D keypoint or 3D annotations, or strong assumptions on object shapes (e.g. shapes are symmetric), yet it successfully recovers 3D shapes with high precision for human faces, cats, cars, and buildings. The recovered 3D shapes immediately allow high-quality image editing like relighting and object rotation. We quantitatively demonstrate the effectiveness of our approach compared to previous methods in both 3D shape reconstruction and face rotation. Our code and models will be released at https://github.com/XingangPan/GAN2Shape.</p>
 
 </div>
-      
+
 <div class="section demo">
 	<h2>Demo</h2>
   <br>
@@ -80,25 +79,25 @@
 	<h2>Materials</h2>
 	<center>
 	  <ul>
-           
+
           <li class="grid">
 	      <div class="griditem">
 		<a href="https://arxiv.org/abs/2011.00844" target="_blank" class="imageLink"><img src="./paper.png"></a><br>
 		  <a href="https://arxiv.org/abs/2011.00844" target="_blank">Paper</a>
 		</div>
 	      </li>
-	  
+
 	    </ul>
 	    </center>
         </div>
-        
+
 <br>
 
 <div class="section code">
 	<h2>Code</h2>
 	<center>
 	  <ul>
-           
+
           <li class="grid">
 	      <div class="griditem">
 		<a href="https://github.com/XingangPan/GAN2Shape" target="_blank" class="imageLink"><img src="./code.png"></a><br>

@@ -81,8 +81,8 @@ a:active { color: #FF4B33; text-decoration: none }
 .head { color: #111; }
 .head h1 { font-size: 24pt; line-height:27pt; margin: 10px 0; }
 .head h1 a { text-decoration:none; }
-.authors { font-size: 18pt; margin: 0 0 1em 0; }
-.affiliations { font-size: 16pt; margin: -0.5em 0 10pt 0; }
+.authors { font-size: 14pt; margin: 0 0 1em 0; }
+.affiliations { font-size: 13pt; margin: -0.5em 0 10pt 0; }
 .venue { font-style:italic; font-size: 12pt; margin: 1em 0 1em 0; }
 .tagline { font-style:italic; font-size: 10.5pt; margin: 1em 0 1em 0; }
 

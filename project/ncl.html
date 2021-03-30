@@ -41,7 +41,7 @@
     </div>
 </div>
 
-    <center><img src="./img/ncl_abs.png" border="0" width="95%">
+    <center><img src="./img/ncl_abs.png" border="0" width="50%">
         Illustration of novel class discovery (NCD) and the proposed neighborhood contrastive learning (NCL).
     </center>
 
@@ -57,15 +57,15 @@
 <div class="section method">
 	<h2>Method Overview</h2>
   <br>
-  <center><img src="./img/ncl_framework.png" border="0" width="80%"><br>
-    (a) Given a single image, Step 1 initializes the depth with ellipsoid, and optimizes the albedo network A. (b) Step 2 uses the depth and albedo to render `pseudo samples' with various random viewpoint and lighting conditions, and conducts GAN-inversion to them to obtain the `projected samples'. (c) Step 3 refines the depth map by optimizing (V, L, D, A) networks to reconstruct the projected samples. The refined depth and models are used as the new initialization to repeat the above steps.
+  <center><img src="./img/ncl_framework.png" border="0" width="95%"><br>
+    The proposed neighborhood contrastive learning framework for novel class discovery. Given training images sampled from the labeled and the unlabeled data, we forward them into the network to obtain corresponding representations. For the labeled data, the CE loss, CS loss and the proposed NCL loss are calculated with the ground-truth labels. For the unlabeled data, BCE loss and CS loss are computed to optimize the new classiﬁer while the NCL loss is proposed to learn discriminative representation. CE: cross-entropy, BCE: binary cross-entropy, CS: consistency, NCL: neighborhood contrastive learning, HNG: hard negative generation.
   </center>
 </div>
 
 <div class="section results">
 	<h2>More Results</h2>
   <br>
-  <center><img src="./img/ncl_results.png" border="0" width="80%"><br>
+  <center><img src="./img/ncl_results.png" border="0" width="90%"><br>
   </center>
 </div>
 
@@ -78,8 +78,8 @@
 
           <li class="grid">
 	      <div class="griditem">
-		<a href="https://arxiv.org/abs/2011.00844" target="_blank" class="imageLink"><img src="./paper.png"></a><br>
-		  <a href="https://arxiv.org/abs/2011.00844" target="_blank">Paper</a>
+		<a href="https://arxiv.org/abs/" target="_blank" class="imageLink"><img src="./paper.png"></a><br>
+		  <a href="https://arxiv.org/abs/" target="_blank">Paper</a>
 		</div>
 	      </li>
 
@@ -96,8 +96,8 @@
 
           <li class="grid">
 	      <div class="griditem">
-		<a href="https://github.com/XingangPan/GAN2Shape" target="_blank" class="imageLink"><img src="./code.png"></a><br>
-		  <a href="https://github.com/XingangPan/GAN2Shape" target="_blank">Code (to be released)</a>
+		<a href="https://zhunzhong.site" target="_blank" class="imageLink"><img src="./code.png"></a><br>
+		  <a href="https://zhunzhong.site" target="_blank">Code (to be released)</a>
 		</div>
 	      </li>
 
@@ -123,21 +123,26 @@
     <h2>Related Work</h2>
     <br>
     <div class="citation">
-      <a href="https://arxiv.org/abs/1912.04958">
-        Tero Karras, Samuli Laine, Miika Aittala, Janne Hellsten, Jaakko Lehtinen, Timo Aila.
-        Analyzing and Improving the Image Quality of StyleGAN.
-        CVPR 2020.
+      <a href="https://arxiv.org/abs/2004.05551">
+        OpenMix: Reviving Known Knowledge for Discovering Novel Visual Categories in An Open World. CVPR, 2021.
       </a>
       <br>
     </div>
+
     <div class="citation">
-      <a href="https://elliottwu.com/projects/unsup3d/">
-        Shangzhe Wu, Christian Rupprecht, Andrea Vedaldi.
-        Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild.
-        CVPR 2020.
+      <a href="https://openreview.net/forum?id=BJl2_nVFPB">
+        Automatically discovering and learning new visual categories with ranking statistics. ICLR, 2020.
       </a>
       <br>
     </div>
+
+    <div class="citation">
+      <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Han_Learning_to_Discover_Novel_Visual_Categories_via_Deep_Transfer_Clustering_ICCV_2019_paper.pdf">
+        Learning to discover novel visual categories via deep transfer clustering. ICCV, 2019.
+      </a>
+      <br>
+    </div>
+
 </div>
 
 </body></html>

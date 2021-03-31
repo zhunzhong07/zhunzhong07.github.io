@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>OpenMix: Reviving Known Knowledge for Discovering Novel Visual Categories in an Open World</title>
+
+    <!-- Meta tags for search engines to crawl -->
+    <meta name="robots" content="index,follow">
+    <meta name="description"
+          content="In this paper, we tackle the problem of discovering new classes in unlabeled visual data given labeled data from disjoint classes. Existing methods typically ﬁrst pre-train a model with labeled data, and then identify new classes in unlabeled data via unsupervised clustering. However, the labeled data that provide essential knowledge are often underexplored in the second step. The challenge is that the labeled and unlabeled examples are from non-overlapping classes, which makes it difﬁcult to build a learning relationship between them. In this work, we introduce OpenMix to mix the unlabeled examples from an open set and the labeled examples from known classes, where their nonoverlapping labels and pseudo-labels are simultaneously mixed into a joint label distribution. OpenMix dynamically compounds examples in two ways. First, we produce mixed training images by incorporating labeled examples with unlabeled examples. With the beneﬁt of unique prior knowledge in novel class discovery, the generated pseudo-labels will be more credible than the original unlabeled predictions. As a result, OpenMix helps preventing the model from overﬁtting on unlabeled samples that may be assigned with wrong pseudo-labels. Second, the ﬁrst way encourages the unlabeled examples with high class-probabilities to have considerable accuracy. We introduce these examples as reliable anchors and further integrate them with unlabeled samples. This enables us to generate more combinations in unlabeled examples and exploit ﬁner object relations among the new classes. Experiments on three classiﬁcation datasets demonstrate the effectiveness of the proposed OpenMix, which is superior to state-of-the-art methods in novel class discovery."
+          .
+    >
+    <meta name="keywords" content="Novel Class Discovery; OpenMix;">
+    <link rel="author" href="zhunzhong.site">
+
+    <!-- Fonts and stuff -->
+    <link href="./css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./project.css" media="screen">
+    <link rel="stylesheet" type="text/css" media="screen" href="./iconize.css">
+    <script async="" src="./prettify.js"></script>
+
+</head>
+
+<body>
+<div id="content">
+    <div id="content-inner">
+
+        <div class="section head">
+            <h1>OpenMix: Reviving Known Knowledge for Discovering Novel Visual Categories in an Open World</h1>
+
+            <div class="authors">
+                <a href="https://zhunzhong.site/">Zhun Zhong</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://ffmpbgrnn.github.io/">Linchao Zhu</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://sites.google.com/view/zhimingluo">Zhiming Luo</a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://imt.xmu.edu.cn/">Shaozi Li</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://reler.net/">Yi Yang</a><sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://disi.unitn.it/~sebe/">Nicu Sebe</a><sup>1</sup>
+
+            </div>
+
+            <div class="affiliations">
+                1. University of Trento &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                2. University of Technology Sydney &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                3. Xiamen University
+            </div>
+        </div>
+
+        <center><img src="./img/openmix_abs.png" border="0" width=90%"><br>
+            Examples of (a) directly using MixUp among unlabeled samples and (b) the proposed OpenMix. Due to the
+            uncertainty of pseudo-labels of unlabeled samples, their mixed labels may still have low conﬁdence. In
+            OpenMix, the prior knowledge (area of high conﬁdence) leads the mixed label to have high (exactly true)
+            conﬁdence in old classes and medium (reliable) conﬁdence in new classes.
+        </center>
+
+        <div class="section abstract">
+            <h2>Abstract</h2>
+            <br>
+            <p>
+                In this paper, we tackle the problem of discovering new classes in unlabeled visual data given labeled
+                data from disjoint classes. Existing methods typically ﬁrst pre-train a model with labeled data, and
+                then identify new classes in unlabeled data via unsupervised clustering. However, the labeled data that
+                provide essential knowledge are often underexplored in the second step. The challenge is that the
+                labeled and unlabeled examples are from non-overlapping classes, which makes it difﬁcult to build a
+                learning relationship between them. In this work, we introduce OpenMix to mix the unlabeled examples
+                from an open set and the labeled examples from known classes, where their nonoverlapping labels and
+                pseudo-labels are simultaneously mixed into a joint label distribution. OpenMix dynamically compounds
+                examples in two ways. First, we produce mixed training images by incorporating labeled examples with
+                unlabeled examples. With the beneﬁt of unique prior knowledge in novel class discovery, the generated
+                pseudo-labels will be more credible than the original unlabeled predictions. As a result, OpenMix helps
+                preventing the model from overﬁtting on unlabeled samples that may be assigned with wrong pseudo-labels.
+                Second, the ﬁrst way encourages the unlabeled examples with high class-probabilities to have
+                considerable accuracy. We introduce these examples as reliable anchors and further integrate them with
+                unlabeled samples. This enables us to generate more combinations in unlabeled examples and exploit ﬁner
+                object relations among the new classes. Experiments on three classiﬁcation datasets demonstrate the
+                effectiveness of the proposed OpenMix, which is superior to state-of-the-art methods in novel class
+                discovery.</p>
+
+        </div>
+
+
+        <div class="section method">
+            <h2>Method Overview</h2>
+            <br>
+            <center><img src="./img/openmix_framework.png" border="0" width="95%"><br>
+                The pipeline of the proposed method. (a) We ﬁrst initialize the model on the labeled data (L ce). (b)
+                Then, we learn the unsupervised clustering model for discovering new classes in unlabeled data, by
+                pseudo-pair learning (L ppl ), pseudo-label learning (L pll ) and learning with the proposed OpenMix (L
+                opm ).
+            </center>
+        </div>
+
+        <div class="section results">
+            <h2>Results</h2>
+            <br>
+            <center><img src="./img/openmix_results.png" border="0" width="90%"><br>
+            </center>
+        </div>
+
+        <br>
+
+
+        <!--=================Materials==========================-->
+        <div class="section materials" , id="materials">
+            <h2>Materials</h2>
+            <table width="80%" align="center" border=none cellspacing="0" cellpadding="30">
+                <tr>
+                    <td width="60%">
+                        <center>
+                            <a href="https://arxiv.org/abs/2004.05551" target="_blank" class="imageLink"><img
+                                    src="./img/openmix_thumb.png" , width="45%"></a><br><br>
+                            <a href="https://arxiv.org/abs/2004.05551" target="_blank">Paper</a>
+                        </center>
+                    </td>
+                    <td width="40%" valign="middle">
+                        <center>
+                            <a href="zhunzhong.site" target="_blank"
+                               class="imageLink"><img
+                                    src="./icon_github.png" , width="50%"></a><br><br>
+                            <a href="zhunzhong.site" target="_blank">Codes</a>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+        <br>
+
+        <div class="section citation">
+            <h2>Citation</h2>
+            <div class="section bibtex">
+      <pre>@inproceedings{zhong2021openmix,
+      title={OpenMix: Reviving Known Knowledge for Discovering Novel Visual Categories in An Open World},
+      author={Zhong, Zhun and Zhu, Linchao and Luo, Zhiming and Li, Shaozi and Yang, Yi and Sebe, Nicu},
+      booktitle={Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+      year={2021}
+}
+
+}</pre>
+            </div>
+        </div>
+
+        <div class="section relatedwork">
+            <h2>Related Work</h2>
+            <br>
+            <div class="citation">
+                <a href="https://arxiv.org/abs/2004.05551">
+                    Neighborhood Contrastive Learning for Novel Class Discovery. CVPR, 2021.
+                </a>
+                <br>
+            </div>
+
+            <div class="citation">
+                <a href="https://openreview.net/forum?id=BJl2_nVFPB">
+                    Automatically discovering and learning new visual categories with ranking statistics. ICLR, 2020.
+                </a>
+                <br>
+            </div>
+
+            <div class="citation">
+                <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Han_Learning_to_Discover_Novel_Visual_Categories_via_Deep_Transfer_Clustering_ICCV_2019_paper.pdf">
+                    Learning to discover novel visual categories via deep transfer clustering. ICCV, 2019.
+                </a>
+                <br>
+            </div>
+
+        </div>
+
+</body>
+</html>

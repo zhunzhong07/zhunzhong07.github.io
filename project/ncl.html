@@ -1,151 +1,166 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Neighborhood Contrastive Learning for Novel Class Discovery</title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Neighborhood Contrastive Learning for Novel Class Discovery</title>
 
-<!-- Meta tags for search engines to crawl -->
-<meta name="robots" content="index,follow">
-<meta name="description" content="In this paper, we address Novel Class Discovery (NCD), the task of unveiling new classes in a set of unlabeled samples given a labeled dataset with known classes. We exploit the peculiarities of NCD to build a new framework, named Neighborhood Contrastive Learning (NCL), to learn discriminative representations that are important to clustering performance. Our contribution is twofold. First, we ﬁnd that a feature extractor trained on the labeled set generates representations in which a generic query sample and its neighbors are likely to share the same class. We exploit this observation to retrieve and aggregate pseudo-positive pairs with contrastive learning, thus encouraging the model to learn more discriminative representations. Second, we notice that most of the instances are easily discriminated by the network, contributing less to the contrastive loss. To overcome this issue, we propose to generate hard negatives by mixing labeled and unlabeled samples in the feature space. We experimentally demonstrate that these two ingredients signiﬁcantly contribute to clustering performance and lead our model to outperform state-of-the-art methods by a large margin (e.g., clustering accuracy +13% on CIFAR-100 and +8% on ImageNet).".
->
-<meta name="keywords" content="Novel Class Discovery; Neighborhood Contrastive Learning;">
-<link rel="author" href="zhunzhong.site">
+    <!-- Meta tags for search engines to crawl -->
+    <meta name="robots" content="index,follow">
+    <meta name="description"
+          content="In this paper, we address Novel Class Discovery (NCD), the task of unveiling new classes in a set of unlabeled samples given a labeled dataset with known classes. We exploit the peculiarities of NCD to build a new framework, named Neighborhood Contrastive Learning (NCL), to learn discriminative representations that are important to clustering performance. Our contribution is twofold. First, we ﬁnd that a feature extractor trained on the labeled set generates representations in which a generic query sample and its neighbors are likely to share the same class. We exploit this observation to retrieve and aggregate pseudo-positive pairs with contrastive learning, thus encouraging the model to learn more discriminative representations. Second, we notice that most of the instances are easily discriminated by the network, contributing less to the contrastive loss. To overcome this issue, we propose to generate hard negatives by mixing labeled and unlabeled samples in the feature space. We experimentally demonstrate that these two ingredients signiﬁcantly contribute to clustering performance and lead our model to outperform state-of-the-art methods by a large margin (e.g., clustering accuracy +13% on CIFAR-100 and +8% on ImageNet)."
+          .
+    >
+    <meta name="keywords" content="Novel Class Discovery; Neighborhood Contrastive Learning;">
+    <link rel="author" href="zhunzhong.site">
 
-<!-- Fonts and stuff -->
-<link href="./css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="./project.css" media="screen">
-<link rel="stylesheet" type="text/css" media="screen" href="./iconize.css">
-<script async="" src="./prettify.js"></script>
+    <!-- Fonts and stuff -->
+    <link href="./css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./project.css" media="screen">
+    <link rel="stylesheet" type="text/css" media="screen" href="./iconize.css">
+    <script async="" src="./prettify.js"></script>
 
 </head>
 
 <body>
-  <div id="content">
+<div id="content">
     <div id="content-inner">
 
-    <div class="section head">
-    <h1>Neighborhood Contrastive Learning for Novel Class Discovery</h1>
+        <div class="section head">
+            <h1>Neighborhood Contrastive Learning for Novel Class Discovery</h1>
 
-    <div class="authors">
-      <a href="https://zhunzhong.site/">Zhun Zhong</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="https://scholar.google.com/citations?user=OQMtSKIAAAAJ&hl=en">Enrico Fini</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="https://scholar.google.com/citations?user=YfzgrDYAAAAJ&hl=en">Subhankar Roy</a><sup>1,3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="https://sites.google.com/view/zhimingluo">Zhiming Luo</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="http://elisaricci.eu/">Elisa Ricci</a><sup>1,3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href="http://disi.unitn.it/~sebe/">Nicu Sebe</a><sup>1</sup>
+            <div class="authors">
+                <a href="https://zhunzhong.site/">Zhun Zhong</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://scholar.google.com/citations?user=OQMtSKIAAAAJ&hl=en">Enrico Fini</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://scholar.google.com/citations?user=YfzgrDYAAAAJ&hl=en">Subhankar Roy</a><sup>1,3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://sites.google.com/view/zhimingluo">Zhiming Luo</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://elisaricci.eu/">Elisa Ricci</a><sup>1,3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="http://disi.unitn.it/~sebe/">Nicu Sebe</a><sup>1</sup>
 
-    </div>
+            </div>
 
-    <div class="affiliations">
-      1. University of Trento &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      2. Xiamen University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      3. Fondazione Bruno Kessler
-    </div>
-</div>
-
-    <center><img src="./img/ncl_abs.png" border="0" width="50%"><br>
-        Illustration of novel class discovery (NCD) and the proposed neighborhood contrastive learning (NCL).
-    </center>
-
-<div class="section abstract">
-    <h2>Abstract</h2>
-    <br>
-    <p>
-      In this paper, we address Novel Class Discovery (NCD), the task of unveiling new classes in a set of unlabeled samples given a labeled dataset with known classes. We exploit the peculiarities of NCD to build a new framework, named Neighborhood Contrastive Learning (NCL), to learn discriminative representations that are important to clustering performance. Our contribution is twofold. First, we ﬁnd that a feature extractor trained on the labeled set generates representations in which a generic query sample and its neighbors are likely to share the same class. We exploit this observation to retrieve and aggregate pseudo-positive pairs with contrastive learning, thus encouraging the model to learn more discriminative representations. Second, we notice that most of the instances are easily discriminated by the network, contributing less to the contrastive loss. To overcome this issue, we propose to generate hard negatives by mixing labeled and unlabeled samples in the feature space. We experimentally demonstrate that these two ingredients signiﬁcantly contribute to clustering performance and lead our model to outperform state-of-the-art methods by a large margin (e.g., clustering accuracy +13% on CIFAR-100 and +8% on ImageNet).</p>
-
-</div>
-
-
-<div class="section method">
-	<h2>Method Overview</h2>
-  <br>
-  <center><img src="./img/ncl_framework.png" border="0" width="95%"><br>
-    The proposed neighborhood contrastive learning framework for novel class discovery. Given training images sampled from the labeled and the unlabeled data, we forward them into the network to obtain corresponding representations. For the labeled data, the CE loss, CS loss and the proposed NCL loss are calculated with the ground-truth labels. For the unlabeled data, BCE loss and CS loss are computed to optimize the new classiﬁer while the NCL loss is proposed to learn discriminative representation. CE: cross-entropy, BCE: binary cross-entropy, CS: consistency, NCL: neighborhood contrastive learning, HNG: hard negative generation.
-  </center>
-</div>
-
-<div class="section results">
-	<h2>Results</h2>
-  <br>
-  <center><img src="./img/ncl_results.png" border="0" width="90%"><br>
-  </center>
-
-  <center><img src="./img/ncl_tsne.png" border="0" width="95%"><br>
-  </center>
-</div>
-
-<br>
-
-<div class="section materials">
-	<h2>Materials</h2>
-	<center>
-	  <ul>
-
-          <li class="grid">
-	      <div class="griditem">
-		<a href="https://arxiv.org/abs/" target="_blank" class="imageLink"><img src="./img/ncl_thumb.png" border="0" width="60%"></a><br>
-		  <a href="https://arxiv.org/abs/" target="_blank">Paper</a>
-		</div>
-	      </li>
-
-	    </ul>
-	    </center>
+            <div class="affiliations">
+                1. University of Trento &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                2. Xiamen University &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                3. Fondazione Bruno Kessler
+            </div>
         </div>
 
-<br>
+        <center><img src="./img/ncl_abs.png" border="0" width="50%"><br>
+            Illustration of novel class discovery (NCD) and the proposed neighborhood contrastive learning (NCL).
+        </center>
 
-<div class="section code">
-	<h2>Code</h2>
-	<center>
-	  <ul>
+        <div class="section abstract">
+            <h2>Abstract</h2>
+            <br>
+            <p>
+                In this paper, we address Novel Class Discovery (NCD), the task of unveiling new classes in a set of
+                unlabeled samples given a labeled dataset with known classes. We exploit the peculiarities of NCD to
+                build a new framework, named Neighborhood Contrastive Learning (NCL), to learn discriminative
+                representations that are important to clustering performance. Our contribution is twofold. First, we ﬁnd
+                that a feature extractor trained on the labeled set generates representations in which a generic query
+                sample and its neighbors are likely to share the same class. We exploit this observation to retrieve and
+                aggregate pseudo-positive pairs with contrastive learning, thus encouraging the model to learn more
+                discriminative representations. Second, we notice that most of the instances are easily discriminated by
+                the network, contributing less to the contrastive loss. To overcome this issue, we propose to generate
+                hard negatives by mixing labeled and unlabeled samples in the feature space. We experimentally
+                demonstrate that these two ingredients signiﬁcantly contribute to clustering performance and lead our
+                model to outperform state-of-the-art methods by a large margin (e.g., clustering accuracy +13% on
+                CIFAR-100 and +8% on ImageNet).</p>
 
-          <li class="grid">
-	      <div class="griditem">
-		<a href="https://zhunzhong.site" target="_blank" class="imageLink"><img src="./code.png"></a><br>
-		  <a href="https://zhunzhong.site" target="_blank">Code (to be released)</a>
-		</div>
-	      </li>
+        </div>
 
-	    </ul>
-	    </center>
-	    </div>
 
-<br>
+        <div class="section method">
+            <h2>Method Overview</h2>
+            <br>
+            <center><img src="./img/ncl_framework.png" border="0" width="95%"><br>
+                The proposed neighborhood contrastive learning framework for novel class discovery. Given training
+                images sampled from the labeled and the unlabeled data, we forward them into the network to obtain
+                corresponding representations. For the labeled data, the CE loss, CS loss and the proposed NCL loss are
+                calculated with the ground-truth labels. For the unlabeled data, BCE loss and CS loss are computed to
+                optimize the new classiﬁer while the NCL loss is proposed to learn discriminative representation. CE:
+                cross-entropy, BCE: binary cross-entropy, CS: consistency, NCL: neighborhood contrastive learning, HNG:
+                hard negative generation.
+            </center>
+        </div>
 
-<div class="section citation">
-    <h2>Citation</h2>
-    <div class="section bibtex">
-      <pre>@article{zhongncl2021,
+        <div class="section results">
+            <h2>Results</h2>
+            <br>
+            <center><img src="./img/ncl_results.png" border="0" width="90%"><br>
+            </center>
+
+            <center><img src="./img/ncl_tsne.png" border="0" width="95%"><br>
+            </center>
+        </div>
+
+        <br>
+
+        <!--=================Materials==========================-->
+        <div class="section materials" , id="materials">
+            <h2>Materials</h2>
+            <table width="80%" align="center" border=none cellspacing="0" cellpadding="30">
+                <tr>
+                    <td width="60%">
+                        <center>
+                            <a href="https://arxiv.org/abs/" target="_blank" class="imageLink"><img
+                                    src="./img/ncl_thumb.png" , width="45%"></a><br><br>
+                            <a href="https://arxiv.org/abs/" target="_blank">Paper</a>
+                        </center>
+                    </td>
+                    <td width="40%" valign="middle">
+                        <center>
+                            <a href="zhunzhong.site" target="_blank"
+                               class="imageLink"><img
+                                    src="./icon_github.png" , width="50%"></a><br><br>
+                            <a href="zhunzhong.site" target="_blank">Codes</a>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+
+        <div class="section citation">
+            <h2>Citation</h2>
+            <div class="section bibtex">
+      <pre>@inproceedings{zhongncl2021,
       title={Neighborhood Contrastive Learning},
       author={Zhong, Zhun and Fini, Enrico and Roy, Subhankar and Luo, Zhiming and Ricci, Elisa and Sebe, Nicu},
       booktitle={Proceedings of IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
       year={2021}
 }</pre>
-      </div>
-      </div>
+            </div>
+        </div>
 
-<div class="section relatedwork">
-    <h2>Related Work</h2>
-    <br>
-    <div class="citation">
-      <a href="https://arxiv.org/abs/2004.05551">
-        OpenMix: Reviving Known Knowledge for Discovering Novel Visual Categories in An Open World. CVPR, 2021.
-      </a>
-      <br>
-    </div>
+        <div class="section relatedwork">
+            <h2>Related Work</h2>
+            <br>
+            <div class="citation">
+                <a href="https://arxiv.org/abs/2004.05551">
+                    OpenMix: Reviving Known Knowledge for Discovering Novel Visual Categories in An Open World. CVPR,
+                    2021.
+                </a>
+                <br>
+            </div>
 
-    <div class="citation">
-      <a href="https://openreview.net/forum?id=BJl2_nVFPB">
-        Automatically discovering and learning new visual categories with ranking statistics. ICLR, 2020.
-      </a>
-      <br>
-    </div>
+            <div class="citation">
+                <a href="https://openreview.net/forum?id=BJl2_nVFPB">
+                    Automatically discovering and learning new visual categories with ranking statistics. ICLR, 2020.
+                </a>
+                <br>
+            </div>
 
-    <div class="citation">
-      <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Han_Learning_to_Discover_Novel_Visual_Categories_via_Deep_Transfer_Clustering_ICCV_2019_paper.pdf">
-        Learning to discover novel visual categories via deep transfer clustering. ICCV, 2019.
-      </a>
-      <br>
-    </div>
+            <div class="citation">
+                <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Han_Learning_to_Discover_Novel_Visual_Categories_via_Deep_Transfer_Clustering_ICCV_2019_paper.pdf">
+                    Learning to discover novel visual categories via deep transfer clustering. ICCV, 2019.
+                </a>
+                <br>
+            </div>
 
-</div>
+        </div>
 
-</body></html>
+</body>
+</html>

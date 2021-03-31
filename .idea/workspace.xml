@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ebe9084-7cde-470c-8ea9-094f22a0e74f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/project/icon_github.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/img/openmix_abs.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/img/openmix_framework.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/img/openmix_pdf.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/img/openmix_results.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/img/openmix_thumb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/openmix.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/ncl.html" beforeDir="false" afterPath="$PROJECT_DIR$/project/ncl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/project.css" beforeDir="false" afterPath="$PROJECT_DIR$/project/project.css" afterDir="false" />
-    </list>
+    <list default="true" id="5ebe9084-7cde-470c-8ea9-094f22a0e74f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,20 +35,20 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="27" />
-          <entry key="html" value="275" />
+          <entry key="html" value="277" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="27" />
-          <entry key="HTML" value="275" />
+          <entry key="HTML" value="277" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/project/ncl.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="572">
@@ -67,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/project/openmix.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="102" selection-start-line="102" selection-end-line="124" selection-end-column="14" />
+            <state relative-caret-position="755">
+              <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
               <folding>
                 <element signature="e#2753#2759#0" expanded="true" />
                 <element signature="e#2759#2765#0" expanded="true" />
@@ -112,8 +102,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/project/project.css" />
-        <option value="$PROJECT_DIR$/project/openmix.html" />
         <option value="$PROJECT_DIR$/project/ncl.html" />
+        <option value="$PROJECT_DIR$/project/openmix.html" />
       </list>
     </option>
   </component>
@@ -252,6 +242,13 @@
     <entry file="file://$PROJECT_DIR$/project/paper.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/ncl.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/project.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -261,8 +258,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/openmix.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="102" selection-start-line="102" selection-end-line="124" selection-end-column="14" />
+        <state relative-caret-position="755">
+          <caret line="36" column="61" selection-start-line="36" selection-start-column="61" selection-end-line="36" selection-end-column="61" />
           <folding>
             <element signature="e#2753#2759#0" expanded="true" />
             <element signature="e#2759#2765#0" expanded="true" />
@@ -275,13 +272,6 @@
             <element signature="e#3271#3277#0" expanded="true" />
             <element signature="e#3277#3283#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/ncl.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
         </state>
       </provider>
     </entry>

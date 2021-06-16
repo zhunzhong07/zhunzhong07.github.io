@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ebe9084-7cde-470c-8ea9-094f22a0e74f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/img/SFOCDA.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,8 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="274" lean-forward="true" selection-start-line="274" selection-end-line="274" />
+            <state relative-caret-position="458">
+              <caret line="318" column="173" selection-start-line="318" selection-start-column="173" selection-end-line="318" selection-end-column="173" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#41749#41755#0" expanded="true" />
@@ -242,6 +240,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="25" width="2505" height="1415" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" side_tool="true" visible="true" weight="0.14210312" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -259,7 +258,7 @@
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32998455" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5005325" side_tool="true" weight="0.22079208" />
-      <window_info anchor="bottom" id="Python Console" order="13" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32998455" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -325,8 +324,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="274" lean-forward="true" selection-start-line="274" selection-end-line="274" />
+        <state relative-caret-position="458">
+          <caret line="318" column="173" selection-start-line="318" selection-start-column="173" selection-end-line="318" selection-end-column="173" />
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#41749#41755#0" expanded="true" />

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>A Unified Objective for Novel Class Discovery</title>
+
+    <!-- Meta tags for search engines to crawl -->
+    <meta name="robots" content="index,follow">
+    <meta name="description"
+          content="In this paper, we study the problem of Novel Class Discovery (NCD). NCD aims at inferring novel object categories in an unlabeled set by leveraging from prior knowledge of a labeled set containing different, but related classes. Existing approaches tackle this problem by considering multiple objective functions, usually involving specialized loss terms for the labeled and the unlabeled samples respectively, and often requiring auxiliary regularization terms. In this paper we depart from this traditional scheme and introduce a UNified Objective function (UNO) for discovering novel classes, with the explicit purpose of favoring synergy between supervised and unsupervised learning. Using a multi-view self-labeling strategy, we generate pseudo-labels that can be treated homogeneously with ground truth labels. This leads to a single classification objective operating on both known and unknown classes. Despite its simplicity, UNO outperforms the state of the art by a significant margin on several benchmarks ($\approx$+$10\%$ on CIFAR-100 and +$8\%$ on ImageNet)."
+          .
+    >
+    <meta name="keywords" content="A Unified Objective for Novel Class Discovery;">
+    <link rel="author" href="https://scholar.google.com/citations?user=OQMtSKIAAAAJ&hl=en">
+
+    <!-- Fonts and stuff -->
+    <link href="./css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./project.css" media="screen">
+    <link rel="stylesheet" type="text/css" media="screen" href="./iconize.css">
+    <script async="" src="./prettify.js"></script>
+
+</head>
+
+<body>
+<div id="content">
+    <div id="content-inner">
+
+        <div class="section head">
+            <h1>A Unified Objective for Novel Class Discovery</h1>
+
+            <div class="authors">
+                <a href="https://scholar.google.com/citations?user=OQMtSKIAAAAJ&hl=en">Enrico Fini</a><sup>1</sup>&nbsp;
+                <a href="https://scholar.google.com/citations?user=OQMtSKIAAAAJ&hl=en">Enver Sangineto</a><sup>1</sup>&nbsp;
+                <a href="https://scholar.google.com/citations?user=OQMtSKIAAAAJ&hl=en">Stéphane Lathuilière</a><sup>2</sup>&nbsp;
+                <a href="https://zhunzhong.site/">Zhun Zhong</a><sup>1</sup>&nbsp;
+                <a href="https://scholar.google.com/citations?user=OQMtSKIAAAAJ&hl=en">Moin Nabi</a><sup>3</sup>&nbsp;
+                <a href="http://elisaricci.eu/">Elisa Ricci</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+
+            <div class="affiliations">
+                1. University of Trento, Trento, Italy <br>
+                2. LTCI, T ́el ́ecom Paris, Institut Polytechnique de Paris, France <br>
+                3. SAP AI Research, Berlin, Germany
+            </div>
+
+            <div class="affiliations">
+                enrico.fini@unitn.it&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;enver.sangineto@unitn.it&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stephane.lathuiliere@telecom-paris.fr<br>
+                zhunzhong007@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m.nabi@sap.com;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.ricci@unitn.it
+            </div>
+        </div>
+
+        <center><img src="./img/uno_thumb.png" border="0" width="50%"><br>
+            A visual comparison of our UNified Objective (UNO) with previous works.
+        </center>
+
+        <div class="section abstract">
+            <h2>Abstract</h2>
+            <br>
+            <p>
+                In this paper, we study the problem of Novel Class Discovery (NCD). NCD aims at inferring novel object categories in an unlabeled set by leveraging from prior knowledge of a labeled set containing different, but related classes. Existing approaches tackle this problem by considering multiple objective functions, usually involving specialized loss terms for the labeled and the unlabeled samples respectively, and often requiring auxiliary regularization terms. In this paper we depart from this traditional scheme and introduce a UNified Objective function (UNO) for discovering novel classes, with the explicit purpose of favoring synergy between supervised and unsupervised learning. Using a multi-view self-labeling strategy, we generate pseudo-labels that can be treated homogeneously with ground truth labels. This leads to a single classification objective operating on both known and unknown classes. Despite its simplicity, UNO outperforms the state of the art by a significant margin on several benchmarks (≈+10\% on CIFAR-100 and +8\% on ImageNet).</p>
+
+        </div>
+
+
+        <div class="section method">
+            <h2>Method Overview</h2>
+            <br>
+            <center><img src="./img/uno_framework.png" border="0" width="95%"><br>
+                Overview of the proposed architecture..
+            </center>
+        </div>
+
+        <div class="section results">
+            <h2>Results</h2>
+            <br>
+            <center><img src="./img/uno_result_2.png" border="0" width="55%"><br>
+                Comparison with state-of-the-art methods on CIFAR-10, CIFAR-100 and ImageNet for novel class discovery using task-aware evaluation protocol. Clustering accuracy is reported on the unlabeled set (training split). All methods except UNO initialize the encoder with self-supervised learning, except when evaluated on ImageNet. “RS+” is with incremental classifier.
+            </center>
+
+            <center><img src="./img/uno_result_3.png" border="0" width="55%"><br>
+                Comparison with state-of-the-art methods on CIFAR-10 and CIFAR-100 on both labeled and unlabeled classes, using task-agnostic evaluation protocol. Accuracy and clustering accuracy are reported on the test set.
+            </center>
+
+            <center><img src="./img/uno_tsne.png" border="0" width="55%"><br>
+                t-SNE visualization for all classes on CIFAR10. For both methods “Shared feature space” stands for the features after the last convolutional block.
+            </center>
+        </div>
+
+        <br>
+
+        <!--=================Materials==========================-->
+        <div class="section materials" , id="materials">
+            <h2>Materials</h2>
+            <table width="80%" align="center" border=none cellspacing="0" cellpadding="30">
+                <tr>
+                    <td width="60%">
+                        <center>
+                            <a href="https://arxiv.org/abs/2106.10731" target="_blank" class="imageLink"><img
+                                    src="./img/ncl_thumb.png" , width="45%"></a><br><br>
+                            <a href="https://arxiv.org/abs/2106.10731" target="_blank">Paper</a>
+                        </center>
+                    </td>
+                    <td width="40%" valign="middle">
+                        <center>
+                            <a href="https://github.com/zhunzhong07/NCL" target="_blank"
+                               class="imageLink"><img
+                                    src="./icon_github.png" , width="50%"></a><br><br>
+                            <a href="https://github.com/zhunzhong07/NCL" target="_blank">Codes</a>
+                        </center>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <br>
+
+        <div class="section citation">
+            <h2>Citation</h2>
+            <div class="section bibtex">
+      <pre>@InProceedings{Fini_2021_ICCV,
+    author    = {Fini, Enrico and Sangineto, Enver and Lathuilière, Stéphane and Zhong, Zhun and Nabi, Moin and Ricci, Elisa},
+    title     = {A Unified Objective for Novel Class Discovery},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    year      = {2021}
+}</pre>
+            </div>
+        </div>
+
+        <div class="section relatedwork">
+            <h2>Related Work</h2>
+            <br>
+            <div class="citation">
+                <a href="https://arxiv.org/abs/2004.05551">
+                    OpenMix: Reviving Known Knowledge for Discovering Novel Visual Categories in An Open World. CVPR,
+                    2021.
+                </a>
+                <br>
+            </div>
+
+                        <div class="citation">
+                <a href="https://arxiv.org/abs/2004.05551">
+                    Neighborhood Contrastive Learning for Novel Class Discovery. CVPR, 2021.
+                </a>
+                <br>
+            </div>
+
+            <div class="citation">
+                <a href="https://openreview.net/forum?id=BJl2_nVFPB">
+                    Automatically discovering and learning new visual categories with ranking statistics. ICLR, 2020.
+                </a>
+                <br>
+            </div>
+
+            <div class="citation">
+                <a href="https://openaccess.thecvf.com/content_ICCV_2019/papers/Han_Learning_to_Discover_Novel_Visual_Categories_via_Deep_Transfer_Clustering_ICCV_2019_paper.pdf">
+                    Learning to discover novel visual categories via deep transfer clustering. ICCV, 2019.
+                </a>
+                <br>
+            </div>
+
+        </div>
+
+</body>
+</html>
